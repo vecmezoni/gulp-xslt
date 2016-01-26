@@ -1,6 +1,6 @@
 {
   "name": "gulp-xslt",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "XSLT transformation plugin for gulp",
   "main": "index.js",
   "keywords": [
@@ -13,9 +13,9 @@
     "url": "git://github.com/vecmezoni/gulp-xslt.git"
   },
   "dependencies": {
-    "node_xslt": "~0.1.9",
     "event-stream": "~3.1.7",
-    "gulp-util": "~3.0.1"
+    "gulp-util": "~3.0.1",
+    "libxslt": "~0.6.3"
   },
   "author": {
     "name": "Alexander Inozemtsev",
@@ -35,7 +35,7 @@
     "mocha": "*",
     "gulp": "~3.8.10",
     "stream-assert": "~2.0.2",
-    "libxml-xsd": "~0.2.0"
+    "libxml-xsd": "~0.5.0"
   },
   "engineStrict": true,
   "engines": {
