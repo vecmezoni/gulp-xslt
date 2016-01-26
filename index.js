@@ -1,25 +1,21 @@
 'use strict';
 
-var xslt = require('node_xslt');
+var libxslt = require('libxslt');
 var es = require('event-stream');
 var gutil = require('gulp-util');
+var fs = require('fs');
 
 module.exports = function(template, config) {
     if (!template) throw new Error('Template option missing');
 
-    var parameters = [];
-
-    if (config) {
-        Object.keys(config).forEach(function(item) {
-            parameters.push(item, config[item]);
-        });
-    }
-
-    parameters = parameters || [];
+    var parameters = config || {};
     var stylesheet;
 
     try {
-        stylesheet = xslt.readXsltFile(template);
+        var contents = fs.readFileSync(template);
+        // XXX: using #parse() directly fails with a coredump ...
+        var stylesheetRaw = libxslt.libxmljs.parseXml(contents);
+        stylesheet = libxslt.parse(stylesheetRaw);
     } catch (e) {
         throw new Error(e.message);
     }
@@ -40,8 +36,9 @@ module.exports = function(template, config) {
 
         if (file.isBuffer()) {
             try {
-                var document = xslt.readXmlString(file.contents);
-                file.contents = new Buffer(xslt.transform(stylesheet, document, parameters));
+                var document = libxslt.libxmljs.parseXml(file.contents);
+                var output = stylesheet.apply(document, parameters, {outputFormat: 'string', noWrapParams: true});
+                file.contents = new Buffer(output);
             } catch (e) {
                 return throwError(e.message);
             }

@@ -80,7 +80,7 @@ describe('gulp-xslt', function() {
         gulp.src(fixtures('/3/*.xml'))
             .pipe(xslt(fixtures('/2/template.xsl')))
             .on('error', function (err) {
-                err.message.should.eql('Failed to parse XML');
+                err.message.should.match(/Premature end of data/);
                 done();
             });
     });
@@ -88,13 +88,13 @@ describe('gulp-xslt', function() {
     it('should throw on broken XSL', function() {
         (function () {
             xslt(fixtures('/3/template.xsl'));
-        }).should.throw('Failed to parse stylesheet');
+        }).should.throw(/Could not parse XML string as XSLT stylesheet/);
     });
 
     it('should throw on nonexistent XSL', function() {
         (function () {
             xslt(fixtures('/4/template.xsl'));
-        }).should.throw('Failed to parse XML');
+        }).should.throw(/no such file or directory/);
     });
 
 });
