@@ -1,4 +1,5 @@
-gulp-xslt [![Build Status](https://travis-ci.org/vecmezoni/gulp-xslt.svg?branch=master)](https://travis-ci.org/vecmezoni/gulp-xslt)
+gulp-xslt [![Build Status](https://travis-ci.org/vecmezoni/gulp-xslt.svg?branch=master)](https://travis-ci.org/vecmezoni/gulp-xslt) [![Build status](https://ci.appveyor.com/api/projects/status/kbtm3nx81k005eqj/branch/master?svg=true)](https://ci.appveyor.com/project/vecmezoni/gulp-xslt/branch/master)
+
 =========
 XSLT transformation plugin for gulp
 
