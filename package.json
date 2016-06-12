@@ -17,10 +17,7 @@
     "gulp-util": "~3.0.1",
     "libxslt": "~0.6.3"
   },
-  "author": {
-    "name": "Alexander Inozemtsev",
-    "email": "alexander.inozemtsev@gmail.com"
-  },
+  "author": "Alexander Inozemtsev <alexander.inozemtsev@gmail.com>",
   "licenses": [
     {
       "type": "MIT",
@@ -40,5 +37,13 @@
   "engineStrict": true,
   "engines": {
     "node": ">= 0.10"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/vecmezoni/gulp-xslt/issues"
+  },
+  "homepage": "https://github.com/vecmezoni/gulp-xslt",
+  "directories": {
+    "test": "test"
+  },
+  "license": "MIT"
 }
