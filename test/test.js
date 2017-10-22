@@ -88,7 +88,7 @@ describe('gulp-xslt', function() {
     it('should throw on broken XSL', function() {
         (function () {
             xslt(fixtures('/3/template.xsl'));
-        }).should.throw(/Could not parse XML string as XSLT stylesheet/);
+        }).should.throw(/misplaced text node/);
     });
 
     it('should throw on nonexistent XSL', function() {
