@@ -13,9 +13,9 @@
     "url": "git://github.com/vecmezoni/gulp-xslt.git"
   },
   "dependencies": {
-    "event-stream": "~3.1.7",
+    "event-stream": "~3.3.4",
     "gulp-util": "~3.0.1",
-    "libxslt": "~0.6.3"
+    "libxslt": "~0.7.0"
   },
   "author": "Alexander Inozemtsev <alexander.inozemtsev@gmail.com>",
   "licenses": [
@@ -30,7 +30,7 @@
   "devDependencies": {
     "should": "*",
     "mocha": "*",
-    "gulp": "~3.8.10",
+    "gulp": "~3.9.1",
     "stream-assert": "~2.0.2",
     "libxml-xsd": "~0.5.0"
   },
