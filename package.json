@@ -1,6 +1,6 @@
 {
   "name": "gulp-xslt",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "XSLT transformation plugin for gulp",
   "main": "index.js",
   "keywords": [
@@ -28,11 +28,11 @@
     "test": "mocha"
   },
   "devDependencies": {
-    "should": "*",
+    "gulp": "~4.0.0",
+    "libxml-xsd": "~0.5.0",
     "mocha": "*",
-    "gulp": "~3.9.1",
-    "stream-assert": "~2.0.2",
-    "libxml-xsd": "~0.5.0"
+    "should": "*",
+    "stream-assert": "~2.0.2"
   },
   "engineStrict": true,
   "engines": {
