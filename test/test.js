@@ -2,7 +2,6 @@ var xslt = require('../');
 var should = require('should');
 var path = require('path');
 var assert = require('stream-assert');
-var File = require('gulp-util').File;
 var gulp = require('gulp');
 var fs = require('fs');
 var xsd = require('libxml-xsd');

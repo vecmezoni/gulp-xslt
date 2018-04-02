@@ -14,8 +14,8 @@
   },
   "dependencies": {
     "event-stream": "~3.3.4",
-    "gulp-util": "~3.0.1",
-    "libxslt": "~0.7.0"
+    "libxslt": "~0.7.0",
+    "plugin-error": "~1.0.1"
   },
   "author": "Alexander Inozemtsev <alexander.inozemtsev@gmail.com>",
   "licenses": [

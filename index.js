@@ -2,7 +2,7 @@
 
 var libxslt = require('libxslt');
 var es = require('event-stream');
-var gutil = require('gulp-util');
+var PluginError = require('plugin-error');
 var fs = require('fs');
 
 module.exports = function(template, config) {
@@ -23,7 +23,7 @@ module.exports = function(template, config) {
     function modifyContents(file, cb) {
 
         function throwError(message) {
-            return cb(new gutil.PluginError('gulp-xslt', message));
+            return cb(new PluginError('gulp-xslt', message));
         }
 
         if (file.isNull()) {
