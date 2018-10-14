@@ -38,7 +38,7 @@ module.exports = function(template, config) {
             try {
                 var document = libxslt.libxmljs.parseXml(file.contents);
                 var output = stylesheet.apply(document, parameters, {outputFormat: 'string', noWrapParams: true});
-                file.contents = new Buffer(output);
+                file.contents = Buffer.from(output);
             } catch (e) {
                 return throwError(e.message);
             }
