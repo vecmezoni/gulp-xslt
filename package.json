@@ -14,8 +14,8 @@
   },
   "dependencies": {
     "event-stream": "~4.0.1",
-    "libxslt": "git+https://github.com/alexdee2007/node-libxslt.git",
-    "plugin-error": "~1.0.1"
+    "plugin-error": "~1.0.1",
+    "xslt-processor": "^0.11.5"
   },
   "author": "Alexander Inozemtsev <alexander.inozemtsev@gmail.com>",
   "licenses": [
@@ -29,10 +29,10 @@
   },
   "devDependencies": {
     "gulp": "~4.0.0",
-    "libxml-xsd": "git+https://github.com/vecmezoni/node-libxml-xsd.git",
     "mocha": "*",
     "should": "*",
-    "stream-assert": "~2.0.2"
+    "stream-assert": "~2.0.2",
+    "xsd-schema-validator": "^0.6.0"
   },
   "engineStrict": true,
   "engines": {

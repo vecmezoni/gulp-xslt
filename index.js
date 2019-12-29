@@ -1,6 +1,8 @@
 'use strict';
 
-var libxslt = require('libxslt');
+var xsltProcessor = require('xslt-processor');
+var xsltProcess = xsltProcessor.xsltProcess;
+var xmlParse = xsltProcessor.xmlParse;
 var es = require('event-stream');
 var PluginError = require('plugin-error');
 var fs = require('fs');
@@ -12,10 +14,8 @@ module.exports = function(template, config) {
     var stylesheet;
 
     try {
-        var contents = fs.readFileSync(template);
-        // XXX: using #parse() directly fails with a coredump ...
-        var stylesheetRaw = libxslt.libxmljs.parseXml(contents);
-        stylesheet = libxslt.parse(stylesheetRaw);
+        var contents = fs.readFileSync(template, {encoding: 'UTF-8'});
+        stylesheet = xmlParse(contents);
     } catch (e) {
         throw new Error(e.message);
     }
@@ -36,8 +36,9 @@ module.exports = function(template, config) {
 
         if (file.isBuffer()) {
             try {
-                var document = libxslt.libxmljs.parseXml(file.contents);
-                var output = stylesheet.apply(document, parameters, {outputFormat: 'string', noWrapParams: true});
+                var document = xmlParse(file.contents.toString());
+                var output = xsltProcess(document, stylesheet);
+                //stylesheet.apply(document, parameters, {outputFormat: 'string', noWrapParams: true});
                 file.contents = Buffer.from(output);
             } catch (e) {
                 return throwError(e.message);
