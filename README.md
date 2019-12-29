@@ -1,4 +1,4 @@
-# gulp-xslt [![Build Status](https://travis-ci.org/vecmezoni/gulp-xslt.svg?branch=master)](https://travis-ci.org/vecmezoni/gulp-xslt)
+# gulp-xslt [![Build Status](https://travis-ci.org/miguel76/gulp-xslt.svg?branch=master)](https://travis-ci.org/miguel76/gulp-xslt)
 
 XSL transformation plugin for gulp
 
