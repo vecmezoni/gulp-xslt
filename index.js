@@ -38,7 +38,6 @@ module.exports = function(template, config) {
             try {
                 var document = xmlParse(file.contents.toString());
                 var output = xsltProcess(document, stylesheet);
-                //stylesheet.apply(document, parameters, {outputFormat: 'string', noWrapParams: true});
                 file.contents = Buffer.from(output);
             } catch (e) {
                 return throwError(e.message);

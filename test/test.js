@@ -4,7 +4,6 @@ var path = require('path');
 var assert = require('stream-assert');
 var gulp = require('gulp');
 var fs = require('fs');
-// var xsd = require('libxml-xsd');
 var validator = require('xsd-schema-validator');
 require('mocha');
 
